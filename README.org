@@ -1,8 +1,10 @@
 #+title: A simple working example for custom-nixpkgs
-The goal of this repository is to provide a bare bones example for working with the [[https://github.com/Open-Systems-Innovation/custom-nixpkgs][custom-nixpkgs]] repo
+The goal of this repository is to provide a bare bones example for working with the [[https://github.com/Open-Systems-Innovation/custom-nixpkgs][custom-nixpkgs]] repo.
 
 * How it works
-The current repository contains the source code for the project ~hello-nix~. The ~custom-nixpkgs~ repo contains a nix package at ~/custom-nixpkgs/pkgs/by-name/hello-nix/package.nix~ that uses ~stdenv.mkDerivation~ to build a derivation of ~hello-nix~ in the users ~nix/store~.
+The current repository contains the source code for the project ~hello-nix~. The [[https://github.com/drupol/my-own-nixpkgs][custom-nixpkgs]] repo contains a nix package at ~/custom-nixpkgs/pkgs/by-name/hello-nix/package.nix~ that uses ~stdenv.mkDerivation~ to build a derivation of ~hello-nix~ in the users ~nix/store~.
+
+The nix derivation in the ~custom-nixpkgs~ repository is similar to a makefile, which compiles and installs the ~hello-hix~ program. This lets the user take advantage of the nix package management system which offers the possibility of pinning builds to specific commits of the source code, allowing for a robust and reproduceable package. 
 
 If the user is using NixOS, they can overlay their packages with the ~custom-nixpkgs~ overlay and have access to ~hello-nix~ in their system.
 
